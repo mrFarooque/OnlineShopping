@@ -69,42 +69,11 @@
 
 <a href="#">**Video Drive Link** </a>
 
-<div style="display: flex; flex-wrap: wrap">
-      <div style="display: flex; flex-direction: column; width: 30%">
-        <label>er diagram</label>
-        <img src="./Images/er-diagram.png" />
-      </div>
-      <div style="display: flex; flex-direction: column; width: 30%">
-        <label>Home Page</label>
-        <img src="./Images/home.png" />
-      </div>
-      <div style="display: flex; flex-direction: column; width: 30%">
-        <label>registration Page</label>
-        <img src="./Images/registration.png" />
-      </div>
-      <div style="display: flex; flex-direction: column; width: 30%">
-        <label>LogIn Page</label>
-        <img src="./Images/login.png" />
-      </div>
-      <div style="display: flex; flex-direction: column; width: 30%">
-        <label>Admin Home</label>
-        <img src="./Images/adminHome.png" />
-      </div>
-      <div style="display: flex; flex-direction: column; width: 30%">
-        <label>category</label>
-        <img src="./Images/category.png" />
-      </div>
-      <div style="display: flex; flex-direction: column; width: 30%">
-        <label>product</label>
-        <img src="./Images/products.png" />
-      </div>
-    </div>
-
 ### E-R Diagram Of Online Shopping Application
 
 ---
 
-<img src="./Images/er-diagram.png" style="width:50%;">
+<img src="./Images/er-diagram.png" style="max-width:100%;">
 
 ---
 
@@ -140,19 +109,43 @@
 
 ---
 
-### Category Management Page
-
----
-
-<img src="./Images/category.png" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
-
----
-
 ### Product Management Page
 
 ---
 
 <img src="./Images/products.png" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
+
+---
+
+### User Home
+
+---
+
+<img src="./Images/userHome.png" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
+
+---
+
+### Product Details
+
+---
+
+<img src="./Images/productDetails.png" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
+
+---
+
+### Cart Page
+
+---
+
+<img src="./Images/cart.png" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
+
+---
+
+### Receipt Page
+
+---
+
+<img src="./Images/receipt.png" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
 
 ---
 
