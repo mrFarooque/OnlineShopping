@@ -69,38 +69,35 @@
 
 <a href="#">**Video Drive Link** </a>
 
-<div style="display: flex;flex-wrap: wrap;">
-      <img src="/OnlineShopping/Images/er-diagram.png" style="width: 50%" />
-      <img
-        src="./OnlineShopping/Images/home.png"
-        style="max-width: 100%; display: inline-block;width: 50%"/>
-
-      <img
-        src="./OnlineShopping/Images/registration.png"
-        style="max-width: 100%; display: inline-block;width: 50%"
-
-      />
-      <img
-        src="./OnlineShopping/Images/login.png"
-        style="max-width: 100%; display: inline-block;width: 50%"
-
-      />
-
-      <img
-        src="./OnlineShopping/Images/adminHome.png"
-        style="max-width: 100%; display: inline-block;width: 50%"
-
-      />
-      <img
-        src="./OnlineShopping/Images/category.png"
-        style="max-width: 100%; display: inline-block;width: 50%"
-
-      />
-      <img
-        src="./OnlineShopping/Images/products.png"
-        style="max-width: 100%; display: inline-block;width: 50%"
-
-      />
+<div style="display: flex; flex-wrap: wrap">
+      <div style="display: flex; flex-direction: column; width: 30%">
+        <label>er diagram</label>
+        <img src="./Images/er-diagram.png" />
+      </div>
+      <div style="display: flex; flex-direction: column; width: 30%">
+        <label>Home Page</label>
+        <img src="./Images/home.png" />
+      </div>
+      <div style="display: flex; flex-direction: column; width: 30%">
+        <label>registration Page</label>
+        <img src="./Images/registration.png" />
+      </div>
+      <div style="display: flex; flex-direction: column; width: 30%">
+        <label>LogIn Page</label>
+        <img src="./Images/login.png" />
+      </div>
+      <div style="display: flex; flex-direction: column; width: 30%">
+        <label>Admin Home</label>
+        <img src="./Images/adminHome.png" />
+      </div>
+      <div style="display: flex; flex-direction: column; width: 30%">
+        <label>category</label>
+        <img src="./Images/category.png" />
+      </div>
+      <div style="display: flex; flex-direction: column; width: 30%">
+        <label>product</label>
+        <img src="./Images/products.png" />
+      </div>
     </div>
 
 ### E-R Diagram Of Online Shopping Application
