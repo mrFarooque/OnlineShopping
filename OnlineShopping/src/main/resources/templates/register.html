@@ -58,7 +58,9 @@
 						<div class="form-group mt-2">
 							<label for="firstName">First Name</label> <input type="text"
 								name="firstName" th:field="*{firstName}" class="form-control"
+								th:classappend="${#fields.hasErrors('firstName')?'is-invalid':''}"
 								placeholder="Enter First Name" required autofocus="autofocus" />
+							<div th:each="e:${#fields.errors('firstName')}" th:text="${e}" class="invalid-feedback"></div>
 						</div>
 						<div class="form-group mt-2">
 							<label for="lastName">Last Name</label> <input type="text"

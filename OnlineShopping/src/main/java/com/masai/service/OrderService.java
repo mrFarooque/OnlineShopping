@@ -1,8 +1,8 @@
 package com.masai.service;
 
-import com.masai.models.OrderEntity;
+import com.masai.models.Orders;
 
 public interface OrderService {
-	OrderEntity saveBill(OrderEntity orderEntity);
-	OrderEntity findByUser_id(Integer id);
+	Orders saveBill(Orders orderEntity);
+	Orders findByUser_id(Integer id);
 }

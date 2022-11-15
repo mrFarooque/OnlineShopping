@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.masai.models.Cart;
-import com.masai.models.OrderEntity;
+import com.masai.models.Orders;
 import com.masai.models.Product;
 import com.masai.models.User;
 import com.masai.repository.CartRepo;
@@ -44,14 +44,20 @@ public class UserController {
 	}
 
 	@GetMapping("/shop")
-	public String shopPage(Model model) {
+	public String shopPage(Model model,Principal principal) {
+		String email =principal.getName();
+		User user = userRepo.findByEmail(email);
+		model.addAttribute("user", user);
 		model.addAttribute("categories", categoryService.viewAllCategories());
 		model.addAttribute("products", productService.viewAllProducts());
 		return "shop";
 	}
 
 	@GetMapping("/shop/category/{id}")
-	public String shopByCategory(@PathVariable Integer id,Model model) {
+	public String shopByCategory(@PathVariable Integer id,Model model,Principal principal) {
+		String email =principal.getName();
+		User user = userRepo.findByEmail(email);
+		model.addAttribute("user", user);
 		model.addAttribute("categories", categoryService.viewAllCategories());
 		model.addAttribute("products", productService.getAllProductByCategoryId(id));
 		return "shop";
@@ -96,22 +102,22 @@ public class UserController {
 	public String checkout(Model model,Principal principal) {
 		
 		model.addAttribute("total",totalAmount(principal));
-		model.addAttribute("orderEntity", new OrderEntity());
+		model.addAttribute("orderEntity", new Orders());
 		return "checkout";
 	}
 	
 	@PostMapping("/billing")
-	public String biling(@ModelAttribute("orderEntity") OrderEntity orderEntity,Principal principal) {
+	public String biling(@ModelAttribute("orderEntity") Orders orders,Principal principal) {
 		List<Product> cartProducts = cartProducts(principal);
-		List<Product> orderProducts = orderEntity.getProducts(); 
+		List<Product> orderProducts = orders.getProducts(); 
 		
 		for(Product prod:cartProducts) {
 			orderProducts.add(prod);
 		}
 		
-		orderEntity.setTotalAmount(totalAmount(principal));
-		orderEntity.setUser(getUser(principal));
-		orderService.saveBill(orderEntity);
+		orders.setTotalAmount(totalAmount(principal));
+		orders.setUser(getUser(principal));
+		orderService.saveBill(orders);
 		
 		return "redirect:/user/receipt";
 	}
@@ -120,7 +126,7 @@ public class UserController {
 	public String receipt(Model model,Principal p) {
 		model.addAttribute("products", cartProducts(p));
 		model.addAttribute("total", totalAmount(p));
-		OrderEntity entity = findOrderByUser(p);
+		Orders entity = findOrderByUser(p);
 		model.addAttribute("order", entity);
 		return "receipt";
 	}
@@ -158,7 +164,7 @@ public class UserController {
 		String email =principal.getName();
 		return userRepo.findByEmail(email);
 	}
-	public OrderEntity findOrderByUser(Principal p) {
+	public Orders findOrderByUser(Principal p) {
 		Integer id = getUser(p).getId();
 		return orderService.findByUser_id(id);
 	}

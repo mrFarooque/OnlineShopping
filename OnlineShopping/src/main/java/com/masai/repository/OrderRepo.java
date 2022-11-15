@@ -2,9 +2,9 @@ package com.masai.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.masai.models.OrderEntity;
+import com.masai.models.Orders;
 
-public interface OrderRepo extends JpaRepository<OrderEntity, Integer>{
+public interface OrderRepo extends JpaRepository<Orders, Integer>{
 
-	OrderEntity findByUser_id(Integer id);
+	Orders findByUser_id(Integer id);
 }
